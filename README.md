@@ -81,7 +81,7 @@ cargo run
 
 3. **Ouvrir dans le navigateur**
 ```
-http://127.0.0.1:3000
+http://127.0.0.1:8080
 ```
 
 ## Utilisation

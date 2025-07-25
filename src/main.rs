@@ -29,7 +29,7 @@ async fn main() -> std::io::Result<()> {
         .nest_service("/static", ServeDir::new("static"))
         .with_state(app_state);
 
-    let listener = TcpListener::bind("127.0.0.1:3000").await?;
+    let listener = TcpListener::bind("0.0.0.0:8080").await?;
     println!("listening on http://{}", listener.local_addr().unwrap());
     axum::serve(listener, app).await?;
     Ok(())
