@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Chat SSE - Connexion</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.6/dist/htmx.min.js"></script>
+  <link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body>
+  <div class="login-container">
+    <h1>💬 Chat SSE Demo</h1>
+    
+    <form hx-post="/login" hx-swap="outerHTML">
+      <div class="form-group">
+        <label for="username">Votre nom d'utilisateur</label>
+        <input 
+          type="text" 
+          id="username"
+          name="username" 
+          placeholder="Entrez votre nom..." 
+          required 
+          minlength="2"
+          maxlength="20"
+          autocomplete="username"
+        >
+      </div>
+      
+      <button type="submit" class="login-button">
+        Entrer dans le canal
+      </button>
+    </form>
+  </div>
+</body>
+</html>
