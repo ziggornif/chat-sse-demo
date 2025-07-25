@@ -1,0 +1,12 @@
+{
+  "apps": [
+    {
+      "app_id": "app_fb83f08e-b18a-45c5-9a5c-77b6899ebde6",
+      "org_id": "user_d52e37c3-c5c5-4907-b3e9-a4b6c5a14095",
+      "deploy_url": "https://github.com/ziggornif/chat-sse-demo.git",
+      "git_ssh_url": "https://github.com/ziggornif/chat-sse-demo.git",
+      "name": "chat-sse-demo",
+      "alias": "chat-sse-demo"
+    }
+  ]
+}
