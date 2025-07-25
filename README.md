@@ -70,7 +70,7 @@ Voir `Cargo.toml` pour la liste complète des dépendances.
 
 1. **Cloner le projet**
 ```bash
-git clone <votre-repo>
+git clone https://github.com/ziggornif/chat-sse-demo.git
 cd chat-sse-demo
 ```
 
