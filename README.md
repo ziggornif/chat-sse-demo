@@ -4,11 +4,11 @@ Une application de chat en temps réel utilisant **Server-Sent Events (SSE)** et
 
 ## Technologies utilisées
 
-- **Backend** : [Rust](https://www.rust-lang.org/) avec [Axum](https://github.com/tokio-rs/axum)
-- **Frontend** : [HTMX](https://htmx.org/) + [HTMX SSE Extension](https://htmx.org/extensions/server-sent-events/)
-- **Templates** : [Askama](https://github.com/djc/askama)
-- **Temps réel** : Server-Sent Events (SSE)
-- **Composants** : Web Components vanilla pour les messages
+- **Backend** : Rust avec [Axum](https://github.com/tokio-rs/axum)
+- **Frontend** : [HTMX](https://htmx.org/) + [HTMX SSE Extension](https://htmx.org/extensions/sse/)
+- **Templates** : [Askama](https://github.com/askama-rs/askama)
+- **Temps réel** : [Server-Sent Events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
+- **Composants** : [Web Components vanilla](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements) pour les messages
 
 ## Architecture
 
@@ -24,17 +24,9 @@ src/
 │   └── sse.rs           # Stream Server-Sent Events
 ├── state.rs             # État partagé de l'application
 ├── types.rs             # Types et structures de données
-└── feeder.rs            # Initialisation de données de test
-templates/
-├── index.html           # Template de la page de chat
-├── login.html           # Template de la page de connexion
-└── message.html         # Template pour les messages (Web Component)
-static/
-├── css/
-│   ├── chat.css         # Styles spécifiques au chat
-│   └── login.css        # Styles spécifiques au login
-└── js/
-    └── chat-message.js  # Web Component pour les messages
+└── feeder.rs            # Initialisation des données de test
+templates/               # Templates HTML
+static/                  # Fichiers statiques css, js, ...
 ```
 
 ### Routes HTTP
@@ -59,8 +51,7 @@ pub struct AppState {
 
 ### Prérequis
 
-- [Rust](https://rustup.rs/) (édition 2024)
-- [Cargo](https://doc.rust-lang.org/cargo/) (inclus avec Rust)
+- [Rust](https://www.rust-lang.org/fr/learn/get-started)
 
 ### Dépendances principales
 
@@ -89,11 +80,11 @@ http://127.0.0.1:8080
 1. **Première visite** : Entrez votre nom d'utilisateur
 2. **Chat** : Tapez vos messages et appuyez sur "Envoyer"
 3. **Temps réel** : Les messages des autres utilisateurs apparaissent automatiquement
-4. **Multi-onglets** : Ouvrez plusieurs onglets pour simuler plusieurs utilisateurs
+4. **Multi-navigateurs** : Ouvrez plusieurs navigateurs pour simuler plusieurs utilisateurs
 
 ## Authentification
 
-Le système utilise des **cookies HTTP** pour maintenir les sessions :
+Le système utilise un **cookie** pour la session utilisateur :
 
 - Cookie `username` stocké côté navigateur
 - Validation automatique sur chaque requête
